@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/skins/color-1.css"> <!-- Ensure this line is present -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .nav {
+            display: flex;
+            flex-direction: row; /* Change to horizontal layout */
+            list-style-type: none;
+            padding: 0;
+            justify-content: space-between; /* Space between logo and nav items */
+            background-color: transparent; /* Transparent background */
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+        .nav.scrolled {
+            background-color: grey; /* Change background color on scroll */
+        }
+        .nav li {
+            margin: 0 20px; /* Adjust margin for horizontal spacing */
+        }
+        .logo {
+            position: relative;
+            top: 20px;
+            color: var(--text-black-800);
+            font-size: 40px; /* Enlarged font size */
+            text-transform: capitalize;
+            text-align: center; /* Center the logo */
+        }
+
+        .logo a {
+            color: var(--text-black-800);
+            font-weight: 600;
+            background: linear-gradient(45deg, #d746bf, #c9ba11); /* Updated gradient to orange shades */
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; /* Text fill color set to transparent to show gradient */
+            padding: 10px 17px;
+            font-size: 40px; /* Enlarged font size */
+            letter-spacing: 1px;
+            position: relative;
+            font-family: 'Pacifico', cursive; /* Changed font to 'Pacifico' */
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Enhanced text shadow */
+            transition: transform 0.3s ease, text-shadow 0.3s ease; /* Added transition for hover effect */
+        }
+
+        .logo a:hover {
+            transform: scale(1.1); /* Scale up the logo slightly on hover */
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 126, 95, 0.5); /* Added glowing effect on hover */
+        }
+
+        .logo a span {
+            font-family: 'Pacifico', cursive; /* Changed font to 'Pacifico' */
+            font-size: 40px;
+            color: var(--text-black-800);
+            animation: glow 1.5s infinite alternate; /* Added glow animation */
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(255, 126, 95, 0.5), 0 0 20px rgba(255, 126, 95, 0.5), 0 0 30px rgba(255, 126, 95, 0.5);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(255, 126, 95, 1), 0 0 30px rgba(255, 126, 95, 1), 0 0 40px rgba(255, 126, 95, 1);
+            }
+        }
+
+        .home_info {
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .home-img img {
+            animation: fadeInRight 1s ease-in-out;
+        }
+
+        .about-content {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .testimonials {
+            background: var(--primary-gradient);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .testimonials .testimonial-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .testimonials .testimonial-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .testimonials .testimonial-item p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .testimonials .testimonial-item .author {
+            margin-top: 15px;
+            font-weight: 600;
+        }
+        /* Ensure the body and main container do not overflow the viewport width */
+        body, .main-container {
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
+        /* Remove keyframes for animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+
+        .fadeIn {
+            animation-name: fadeIn;
+        }
+
+        .fadeInUp {
+            animation-name: fadeInUp;
+        }
+
+        .fadeInRight {
+            animation-name: fadeInRight;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <header class="header">
+            <div class="container">
+                <nav class="nav">
+                    <ul class="nav-menu">
+                        <li><a href="#home"><i class="fas fa-home"></i> Home</a></li> <!-- Home button -->
+                        <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                        <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
+                        <li><a href="#services"><i class="fas fa-briefcase"></i> Services</a></li>
+                        <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                        <li><a href="#certificates"><i class="fas fa-certificate"></i> Certificates</a></li>
+                        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                    </ul>
+                    <div class="nav-toggler" aria-label="Toggle navigation" aria-expanded="false">
+                        <span></span>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="main content">
+            <section id="home" class="home section">
+                <div class="container">
+                </div>
+                <div class="container">
+                    <div class="row home-content">
+                        <div class="home_info">
+                            <h3 class="hello">HELLO, I'M <span class="name">LISANEGEBRIEL ABAY</span></h3>
+                            <h3 class="my-profession"> A <span class="typing">Computer Science student at Addis Ababa University</span></h3>
+                            <p>I'm a website and app developer with a strong interest in cybersecurity.</p>
+                            <p>Have a look</p>
+                            <a href="#projects" class="btn view-projects">View My Projects</a>
+                            <a href="#contact" class="btn contact-me">Contact Me</a>
+                        </div>
+                        <div class="home-img">
+                            <img src="images/hero11.png" alt="Hero Image" class="hero-img">
+                            <!-- Removed welcome-text and explore-text elements -->
+                        </div>
+                    </div>
+                </div>
+                <div class="shape shape1"></div>
+                <div class="shape shape2"></div>
+                <div class="shape shape3"></div>
+                <!-- Add additional bubbles -->
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+            </section>
+            <section id="about" class="about section">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title padd-15">
+                            <h2 class="about-title">About</h2>
+                        </div>
+                        <div class="about-content">
+                            <div class="about-text">
+                                <p>I have experience as a full-stack web developer, proficient in both frontend and backend development. Additionally, I have a keen interest in cybersecurity, app development and Data Structure and Algorithm(DSA). I invite you to explore my professional portfolio and connect with me on LinkedIn or view my projects on GitHub, as I welcome opportunities for collaboration and discussions on new ideas.</p>
+                            </div>
+                            <div class="about-details">
+                                <ul>
+                                    <li><strong>Name:</strong> Lisanegebriel Abay</li>
+                                    <li><strong>Age:</strong> 20</li>
+                                    <li><strong>Location:</strong> Addis Ababa, Ethiopia</li>
+                                    <li><strong>Experience:</strong> 2 years +</li>
+                                    <li><strong>Education:</strong> B.Sc. in Computer Science</li>
+                                </ul>
+                            </div>
+                            <div class="about-buttons">
+                                <a href="https://leetcode.com/u/lisanx/" class="btn animated-btn">Leetcode</a> <!-- Leetcode link -->
+                                <a href="https://codeforces.com/profile/lisan5abay" class="btn animated-btn">Codeforces</a> <!-- Codeforces link -->
+                                <a href="assets/cv.pdf" class="btn animated-btn" download><i class="fas fa-download"></i> Download CV</a> <!-- Moved Download CV button here -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shape shape1"></div>
+                    <div class="shape shape2"></div>
+                    <div the="shape shape3"></div>
+                    <!-- Add additional bubbles -->
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                </div>
+            </section>
+            <section id="skills" class="skills section">
+                <div class="container">
+                    <div class="section-title padd-15">
+                        <h2 class="skills-title">Skills</h2>
+                    </div>
+                    <div class="skills-intro">
+                        <p>These are some of the skills I have.</p>
+                    </div>
+                    <div class="row skills-content">
+                        <div class="col-md-6 skill-item">
+                            <div class="skill-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3>Programming Languages</h3>
+                            <p>Proficient in Python, C++, Java, JavaScript, SQL, and various other programming languages and technologies.</p>
+                        </div>
+                        <div class="col-md-6 skill-item">
+                            <div class="skill-icon">
+                                <i class="fas fa-code-branch"></i>
+                            </div>
+                            <h3>Version Control</h3>
+                            <p>Experienced with Git and GitHub for version control and collaboration.</p>
+                        </div>
+                        <div class="col-md-6 skill-item">
+                            <div class="skill-icon">
+                                <i class="fas fa-bug"></i>
+                            </div>
+                            <h3>Testing & Debugging</h3>
+                            <p>Skilled in testing and debugging to ensure high-quality software.</p>
+                        </div>
+                        <div class="col-md-6 skill-item">
+                            <div class="skill-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <h3>APIs & Web Services</h3>
+                            <p>Proficient in designing and consuming APIs and web services.</p>
+                        </div>
+                        <div class="col-md-6 skill-item">
+                            <div class="skill-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h3>Database Management</h3>
+                            <p>Experienced in managing and optimizing databases.</p>
+                        </div>
+                    </div>
+                    <div class="shape shape1"></div>
+                    <div class="shape shape2"></div>
+                    <div class="shape shape3"></div>
+                </div>
+            </section>
+            <section id="services" class="services section">
+                <div class="container">
+                    <div class="section-title padd-15">
+                        <h2 class="services-title">Services</h2>
+                    </div>
+                    <div class="services-intro">
+                        <p>These are some of the services I offer.</p>
+                    </div>
+                    <div class="row services-content">
+                        <div class="col-md-6 service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3>Web Development</h3>
+                            <p>Building responsive and modern websites using the latest technologies.</p>
+                        </div>
+                        <div class="col-md-6 service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3>App Development</h3>
+                            <p>Creating user-friendly mobile applications for Android devices.</p>
+                        </div>
+                        <div class="col-md-6 service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3>Cybersecurity</h3>
+                            <p>Providing security solutions to protect your digital assets from threats.</p>
+                        </div>
+                        <div class="col-md-6 service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3>Data Structures & Algorithms</h3>
+                            <p>Expertise in solving complex problems with over 800+ problems solved across various platforms.</p>
+                        </div>
+                    </div>
+                    <div class="shape shape1"></div>
+                    <div class="shape shape2"></div>
+                    <div class="shape shape3"></div>
+                </div>
+            </section>
+            <section id="projects" class="projects section">
+                <div class="container">
+                    <div class="section-title padd-15">
+                        <h2 class="projects-title">Projects</h2>
+                    </div>
+                    <div class="projects-intro">
+                        <p>Here are some of the projects I have worked on. Click on any project to learn more about it.</p>
+                    </div>
+                    <div class="row projects-showcase">
+                    </div>
+                    <div class="shape shape1"></div>
+                    <div class="shape shape2"></div>
+                    <div class="shape shape3"></div>
+                </div>
+            </section>
+            <section id="certificates" class="certificates section">
+                <div class="container">
+                    <div class="section-title padd-15">
+                        <h2 class="certificates-title">Certificates</h2>
+                    </div>
+                    <div class="certificates-intro">
+                        <p>These are some of the certificates I got. Click on any of them to learn more.</p>
+                    </div>
+                    <div class="row certificates-showcase">
+                        <a href="https://www.udemy.com/course/web-development-masterclass-complete-certificate-course/?couponCode=ST6MT103124" target="_blank" class="certificate-item">
+                            <h3>Web Development Masterclass</h3>
+                            <p>This certificate was awarded for completing an advanced course in web development, covering topics such as responsive design, JavaScript frameworks, and backend integration.</p>
+                        </a>
+                        <a href="https://www.coursera.org/programs/umuzi-urt8o/professional-certificates/ibm-backend-development" target="_blank" class="certificate-item">
+                            <h3>IBM Back-End Development</h3>
+                            <p>This certificate recognizes proficiency in back-end development, with a focus on server-side programming, databases, and API integration.</p>
+                        </a>
+                        <a href="https://www.coursera.org/programs/umuzi-urt8o/professional-certificates/google-cybersecurity" target="_blank" class="certificate-item">
+                            <h3>Google Cybersecurity</h3>
+                            <p>This certificate was awarded for completing a comprehensive course in cybersecurity, covering topics such as network security, threat detection, and incident response.</p>
+                        </a>
+                        <a href="https://www.udemy.com/course/android-kotlin-development/learn/lecture/35857016?start=0#overview" target="_blank" class="certificate-item">
+                            <h3>Android App Development</h3>
+                            <p>This certificate was awarded for completing a course in Android app development, covering topics such as Kotlin programming, UI design, and app deployment.</p>
+                        </a>
+                    </div>
+                    <div class="shape shape1"></div>
+                    <div the="shape shape2"></div>
+                    <div the="shape shape3"></div>
+                </div>
+            </section>
+            <section id="contact" class="contact section">
+                <div class="container">
+                    <div class="section-title padd-15">
+                        <h2 class="contact-title">Contact</h2>
+                    </div>
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <h3>Get in Touch</h3>
+                            <p>If you have any questions or would like to work with me, feel free to reach out!</p>
+                            <ul>
+                                <li><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps?q=Addis+Ababa,+Ethiopia" target="_blank" style="color: #007BFF; text-decoration: underline;">Addis Ababa, Ethiopia</a></li>
+                                <li><i class="fas fa-envelope"></i> lisan5abay@gmail.com</li>
+                            </ul>
+                        </div>
+                        <div class="contact-form">
+                            <form action="https://formspree.io/f/mnnqjkkb" method="POST">
+                                <div class="form-group">
+                                    <input type="text" name="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="email" placeholder="Your Email" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                                </div>
+                                <button type="submit" class="btn">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="contact-buttons">
+                        <a href="https://www.linkedin.com/in/lisane/" class="btn animated-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="https://github.com/lisan-5" class="btn animated-btn"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://t.me/ligator" class="btn animated-btn"><i class="fab fa-telegram"></i> Telegram</a>
+                        <a href="mailto:lisan5abay@gmail.com" class="btn animated-btn"><i class="fas fa-envelope"></i> Email</a>
+                    </div>
+                    <div class="shape shape1"></div>
+                    <div class="shape shape2"></div>
+                    <div the="shape shape3"></div>
+                </div>
+            </section>
+        </div>
+        <footer class="footer" style="background-color: #080808ca;">
+            <div class="container">
+                <p>&copy; 2024 Lisanegebriel Abay Kebedew. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <!-- Global Bubbles Container -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+

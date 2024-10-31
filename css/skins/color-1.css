@@ -1,0 +1,32 @@
+:root {
+    --skin-color: #0056b3; /* Darker Blue for better contrast */
+    --nav-bg-color: #0056b3; /* Updated to match skin color */
+    --nav-text-color: #ffffff; /* White text for readability */
+    --nav-hover-text-color: #ff6347; /* Highlight color on hover */
+    --page-bg-color: #007BFF; /* Consistent blue for all backgrounds */
+    /* ...existing variables... */
+}
+
+/* ...existing skin styles... */
+
+@media (max-width: 768px) {
+    .nav {
+        background-color: var(--nav-bg-color);
+    }
+
+    .button {
+        background-color: var(--button-color);
+    }
+}
+
+/* ...existing skin styles... */
+
+body {
+    background-color: var(--page-bg-color); /* Use the consistent blue color */
+}
+
+/* ...existing skin styles... */
+
+.bubble {
+    background-color: var(--skin-color);
+}
