@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
             image: 'images/job-board.jpg',
             details: 'This project involves creating a comprehensive job board platform where employers can post job listings and job seekers can search and apply for jobs. The platform includes features such as resume uploads, application tracking, and job alerts.'
         },
-        // ...other projects...
     ];
 
     const projectsShowcase = document.querySelector('.projects-showcase');
@@ -172,11 +171,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Remove or comment out any background color manipulations
-// Example:
-// document.body.style.backgroundColor = '#desiredBlue'; // Remove this line if present
-
-// ...existing code...
 
 const heroImage = document.querySelector('.hero-img');
 const welcomeText = document.querySelector('.welcome-text');
